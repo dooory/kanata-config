@@ -1,0 +1,38 @@
+(defcfg
+	process-unmapped-keys yes
+)
+
+(defsrc
+	esc		lbrc	rbrc	bksl
+	caps	h		j		k		l	
+	lctrl  	lalt  	rctrl
+)
+
+(deflayer default 
+	caps		_	_	_	
+	@ctrlesc 	_  	_   _  	_
+	_	@arrow	@media
+)
+
+(deflayer media-mod
+	_	prev	pp    next
+	_	_	_	_	_	
+	_	_	_
+)
+
+(deflayer arrow-mod
+	_  _  _  _
+	_  left  down  up  right
+	_  _  _
+)
+
+(defvar
+	tap-time 200
+	hold-time 250
+)
+
+(defalias
+	ctrlesc (tap-hold $tap-time $hold-time esc lctrl)
+	media (layer-while-held media-mod)
+	arrow (layer-while-held arrow-mod)
+)

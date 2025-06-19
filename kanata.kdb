@@ -1,0 +1,52 @@
+(defcfg
+	process-unmapped-keys yes
+)
+
+(defsrc
+	esc		
+	lbrc	
+	rbrc	
+	bksl
+	caps	
+	lctrl 
+	WakeUp 	
+	lmeta
+	lalt
+	rctrl
+)
+
+(deflayer default 
+	caps		
+	_	
+	_	
+	_	
+	@ctrlesc
+	WakeUp   	
+	lctrl	
+	lalt
+	lmeta
+	@media
+)
+
+(deflayer media-mod
+	_	
+	prev	
+	pp    
+	next
+	_	
+	_	
+	_
+	_
+	_
+	_
+)
+
+(defvar
+	tap-time 100
+	hold-time 150
+)
+
+(defalias
+	ctrlesc (tap-hold $tap-time $hold-time esc lctrl)
+	media (layer-while-held media-mod)
+)

@@ -8,8 +8,6 @@
 	rbrc	
 	bksl
 	caps	
-	lctrl 
-	WakeUp 	
 	lmeta
 	lalt
 	rctrl
@@ -21,8 +19,6 @@
 	_	
 	_	
 	@ctrlesc
-	WakeUp   	
-	lctrl	
 	lalt
 	lmeta
 	@media
@@ -35,8 +31,6 @@
 	next
 	_	
 	_	
-	_
-	_
 	_
 	_
 )
